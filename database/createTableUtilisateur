@@ -1,0 +1,8 @@
+drop table utilisateur
+create TABLE utilisateur
+(
+    id INT PRIMARY KEY NOT NULL,
+    nom VARCHAR(100),
+    prenom VARCHAR(100),
+    sexe VARCHAR(255)
+)

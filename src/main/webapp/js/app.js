@@ -1,7 +1,15 @@
 var app = angular.module("geektic", ['ngRoute']);
+app.config(['$routeProvider',
+    function($routeProvider) {
+        $routeProvider.
+            when('/', {
+                templateUrl: '/includes/home.html'
+            }).
+            when('/new', {
+                templateUrl: '/includes/newUser.html'
+            }).
+            otherwise({
+                redirectTo: '/'
+            });
+    }]);
 
-app.controller('HelloCtrl', function($scope, $http) {
-    $http.get('/api/hello').success(function(helloMessage) {
-        $scope.helloMessage = helloMessage;
-    });
-});
