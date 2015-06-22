@@ -16,12 +16,11 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
  */
 @RestController
 @Transactional
-@RequestMapping("/{sexe}/{centreInteret}")
+@RequestMapping("/geeks/{sexe}/")
 public class SearchService {
     @RequestMapping(method = GET)
     List<Geek> searchAction(@PathVariable("sexe") String sexe,@PathVariable("centreInteret") int centreInteret) {
         GeekDAO resultat = new GeekDAO();
-
         return resultat.findBySexeAndCI(sexe,centreInteret);
     }
 }

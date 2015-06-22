@@ -5,9 +5,9 @@ app.config(['$routeProvider',
             when('/', {
                 templateUrl: '/includes/home.html'
             }).
-            when('/search/:name'
+            when('/geeks/:name'
             , { templateUrl: '/includes/search.html', controller: CMSController })
-            otherwise({
+            .otherwise({
                 redirectTo: '/'
             });
     }]);
