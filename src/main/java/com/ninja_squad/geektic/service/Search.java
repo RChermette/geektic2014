@@ -34,7 +34,6 @@ public class Search {
        String _sexe = this.sexe;
         int _centreInteret = this.centreInteret;
         GeekDAO resultat = new GeekDAO();
-
         return resultat.findBySexeAndCI(sexe,centreInteret);
     }
 

@@ -1,7 +1,6 @@
 <div class="container">
     <div class="col-xs-12 col-sm-12 col-md-12  col-lg-12">
         <form name="myForm" novalidate>
-            <div ng-messages="myForm.prenom.$error" ng-messages-include="erreurs.html"></div>
             <label>Interesse(e) par :</label><br/>
             <input name="reponse" value="femmes" type="radio" ng-model="sexe.name" radio required>&nbsp;Les femmes<br/>
             <input name="reponse" value="hommes" type="radio" ng-model="sexe.name"radio required>&nbsp;Les hommes<br/>
@@ -14,7 +13,7 @@
                 <option value="3">JavaScript</option>
             </select>
             {{ model.id }}
-            <a href="/geeks/{{sexe.name}}/1"><input class="btn btn-primary" type="submit" value="Rechercher votre ame soeur !"></a>
+            <a href="/geeks/{{sexe.name}}/{{model.id}}" class="btn btn-primary" value="Rechercher votre ame soeur !"></a>
         </form>
     </div>
 </div>
