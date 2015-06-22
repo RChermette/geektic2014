@@ -5,11 +5,16 @@ app.config(['$routeProvider',
             when('/', {
                 templateUrl: '/includes/home.html'
             }).
-            when('/new', {
-                templateUrl: '/includes/newUser.html'
-            }).
+            when('/search/:name'
+            , { templateUrl: '/includes/search.html', controller: CMSController })
             otherwise({
                 redirectTo: '/'
             });
     }]);
 
+var searchController = angular.module('searchController',[]);
+
+function CMSController($scope, $route, $routeParams) {
+    $route.current.templateUrl = '/pages/' + $routeParams.name + ".html";
+    alert($route.current.templateUrl);
+}

@@ -1,1 +1,20 @@
-<p>Hioioioi</p>Heyyyyyyyyy
+<div class="container">
+    <div class="col-xs-12 col-sm-12 col-md-12  col-lg-12">
+        < name="myForm" novalidate>
+            <div ng-messages="myForm.prenom.$error" ng-messages-include="erreurs.html"></div>
+            <label>Interessé(e) par :</label><br/>
+            <input name="reponse" value="femmes" type="radio" ng-model="sexe.name" radio required>&nbsp;Les femmes<br/>
+            <input name="reponse" value="hommes" type="radio" ng-model="sexe.name"radio required>&nbsp;Les hommes<br/>
+            Vous etes interesse(e) par les : {{sexe.name}}
+            <br/>
+            Quel est votre centre d'interet principale ?<br/>
+            <select ng-model="model.id">
+                <option value="1">CSS</option>
+                <option value="2">HTML</option>
+                <option value="3">JavaScript</option>
+            </select>
+            {{ model.id }}
+            <a href="/{{sexe.name}}/"><input class="btn btn-primary" type="submit" value="Rechercher votre ame soeur !"</a> />
+        </form>/
+    </div>
+</div>
