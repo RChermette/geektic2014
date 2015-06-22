@@ -20,9 +20,8 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 public class SearchService {
     @RequestMapping(method = GET)
     List<Geek> searchAction(@PathVariable("sexe") String sexe,@PathVariable("centreInteret") int centreInteret) {
-       Search search = new Search(sexe,centreInteret);
-        search.compare();
-        List<Geek> result = new ArrayList<>();
-        return result;
+        GeekDAO resultat = new GeekDAO();
+
+        return resultat.findBySexeAndCI(sexe,centreInteret);
     }
 }

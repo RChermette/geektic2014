@@ -29,13 +29,13 @@ public class Search {
         this.centreInteret = centreInteret;
     }
 
-    public List<Geek> compare()
+    public List<Geek> compare()//on se sert des attributs de la route pour réaliser une requête SQL qui retourne les geeks qui correspondent aux critères.
     {
        String _sexe = this.sexe;
         int _centreInteret = this.centreInteret;
+        GeekDAO resultat = new GeekDAO();
 
-
-
+        return resultat.findBySexeAndCI(sexe,centreInteret);
     }
 
 }
