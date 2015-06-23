@@ -1,5 +1,6 @@
 package com.ninja_squad.geektic.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,8 +19,13 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 @Transactional
 @RequestMapping("/geeks/{sexe}/{centreInteret}")
 public class SearchService {
+
+    @Autowired
+    GeekDAO geekDAO;
+
+
     @RequestMapping(method = GET)
-    List<Geek> searchAction(@PathVariable("sexe") String sexe,@PathVariable("centreInteret") int centreInteret, GeekDAO geekDao) {
-        return geekDao.findBySexeAndCI(sexe, centreInteret);
+    List<Geek> searchAction(@PathVariable("sexe") String sexe,@PathVariable("centreInteret") int centreInteret) {
+        return geekDAO.findBySexeAndCI(sexe, centreInteret);
     }
 }

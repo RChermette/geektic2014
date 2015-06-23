@@ -15,14 +15,16 @@ public class GeekDAO {
         @PersistenceContext
         private EntityManager entityManager;
 
+    public GeekDAO() {}
+
 
         public List<Geek> findAll(){
-            String query = "SELECT u FROM Utilisateur u";
+            String query = "SELECT u FROM Geek u";
             return entityManager.createQuery(query, Geek.class).getResultList();
         }
 
     public List<Geek> findBySexeAndCI(String sexe, int centreInteret){
-        String query = "SELECT u FROM Utilisateur u WHERE Sexe = " + sexe;
+        String query = "SELECT g FROM Geek g WHERE g.sexe = '" + sexe+"'";
         return entityManager.createQuery(query, Geek.class).getResultList();
     }
 }

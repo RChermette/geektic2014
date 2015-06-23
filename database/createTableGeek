@@ -1,5 +1,5 @@
-drop table utilisateur
-create TABLE utilisateur
+drop table geek
+create TABLE geek
 (
     id INT PRIMARY KEY NOT NULL,
     nom VARCHAR(100),
