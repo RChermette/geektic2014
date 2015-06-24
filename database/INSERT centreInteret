@@ -1,0 +1,5 @@
+INSERT INTO centreinteret (id, centreinteret) VALUES (1,'PHP')
+INSERT INTO centreinteret (id, centreinteret) VALUES (2,'HTML5')
+INSERT INTO centreinteret (id, centreinteret) VALUES (3,'SQL')
+INSERT INTO centreinteret (id, centreinteret) VALUES (4,'Java')
+INSERT INTO centreinteret (id, centreinteret) VALUES (5,'C#')

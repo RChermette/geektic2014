@@ -3,7 +3,8 @@ app.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
             when('/', {
-                templateUrl: '/includes/home.html'
+                templateUrl: '/includes/home.html',
+                controller: 'CentreInteret'
             }).
             when('/geeks/:sexe/:centreInteret'
             , { templateUrl: '/includes/search.html',
@@ -13,6 +14,15 @@ app.config(['$routeProvider',
                 redirectTo: '/'
             });
     }]);
+
+app.controller('CentreInteret', function($scope, $http, $routeParams) {
+    $http({
+        url: '/ci',
+        method: 'GET'
+    }).success(function(CentreInterets) {
+        $scope.CentreInterets = CentreInterets;
+    });
+})
 
 app.controller('Geek', function($scope, $http, $routeParams) {
     $http({

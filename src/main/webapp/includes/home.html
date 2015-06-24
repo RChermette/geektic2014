@@ -6,13 +6,10 @@
             <input name="reponse" value="homme" type="radio" ng-model="sexe.name"radio required>&nbsp;Les hommes<br/>
             <br/>
             Quel est votre centre d'interet principale ?<br/>
-            <select ng-model="model.id">
-                <option value="1">CSS</option>
-                <option value="2">HTML</option>
-                <option value="3">JavaScript</option>
+            <select name="centreInteret">
+                <option ng-repeat="ci in CentreInterets" value="{{ci.centreInteret}}">{{ci.centreInteret}}</option>
             </select>
-            {{ model.id }}
-            <a href="/#/geeks/{{sexe.name}}/{{model.id}}" class="btn btn-primary">Rechercher votre ame soeur !</a>
+            <a href="/#/geeks/{{sexe.name}}/1" class="btn btn-primary">Rechercher votre ame soeur !</a>
             kkkkkoooo
         </form>
     </div>
