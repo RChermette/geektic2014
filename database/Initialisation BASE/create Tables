@@ -1,4 +1,4 @@
-drop table geek
+
 create TABLE geek
 (
     id INT PRIMARY KEY NOT NULL,
@@ -8,6 +8,10 @@ create TABLE geek
     mail VARCHAR(255),
    id_ci int
 )
-
+create TABLE centreInteret
+(
+    id INT PRIMARY KEY NOT NULL,
+    CentreInteret VARCHAR(255)
+)
 ALTER TABLE geek
   ADD FOREIGN KEY (id_ci) REFERENCES centreInteret(id);

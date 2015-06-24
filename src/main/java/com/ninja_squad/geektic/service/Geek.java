@@ -10,11 +10,20 @@ import javax.persistence.*;
 public class Geek {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator="USER_SEQ")
-    private int id;
+    public int id;
     public String sexe;
     public String nom;
     public String prenom;
     public String mail;
+    public int id_ci;
+
+    public int getId_ci() {
+        return id_ci;
+    }
+
+    public void setId_ci(int id_ci) {
+        this.id_ci = id_ci;
+    }
 
     public String getSexe() {
         return sexe;

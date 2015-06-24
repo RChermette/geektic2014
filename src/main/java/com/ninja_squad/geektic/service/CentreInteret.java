@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class CentreInteret {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator="USER_SEQ")
-    private int id;
+    public int id;
     public String centreInteret;
 
     public String getCentreInteret() {

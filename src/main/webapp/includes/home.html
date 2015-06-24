@@ -1,16 +1,15 @@
 <div class="container">
     <div class="col-xs-12 col-sm-12 col-md-12  col-lg-12">
-        <form name="myForm" novalidate>
+        <form name="myForm" novalidate class="formulaire">
             <label>Interesse(e) par :</label><br/>
             <input name="reponse" value="femme" type="radio" ng-model="sexe.name" radio required>&nbsp;Les femmes<br/>
             <input name="reponse" value="homme" type="radio" ng-model="sexe.name"radio required>&nbsp;Les hommes<br/>
             <br/>
             Quel est votre centre d'interet principale ?<br/>
-            <select name="centreInteret">
-                <option ng-repeat="ci in CentreInterets" value="{{ci.centreInteret}}">{{ci.centreInteret}}</option>
+            <select name="centreInteret" ng-model="centreInteret.name">
+                <option ng-repeat="ci in CentreInterets"  value="{{ci.id}}">{{ci.centreInteret}}</option>
             </select>
-            <a href="/#/geeks/{{sexe.name}}/1" class="btn btn-primary">Rechercher votre ame soeur !</a>
-            kkkkkoooo
+            <a href="/#/geeks/{{sexe.name}}/{{centreInteret.name}}" class="btn btn-primary">Rechercher votre ame soeur !</a>
         </form>
     </div>
 </div>

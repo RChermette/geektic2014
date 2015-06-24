@@ -24,7 +24,7 @@ public class GeekDAO {
         }
 
     public List<Geek> findBySexeAndCI(String sexe, int centreInteret){
-        String query = "SELECT g FROM Geek g WHERE g.sexe = '" + sexe+"'";
-        return entityManager.createQuery(query, Geek.class).getResultList();
+        String query = "SELECT g FROM Geek g WHERE g.sexe = :sexe AND g.id_ci = :centreInteret";
+        return entityManager.createQuery(query, Geek.class).setParameter("sexe", sexe).setParameter("centreInteret", centreInteret).getResultList();
     }
 }
