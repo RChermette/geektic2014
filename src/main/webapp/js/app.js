@@ -5,16 +5,24 @@ app.config(['$routeProvider',
             when('/', {
                 templateUrl: '/includes/home.html'
             }).
-            when('/geeks/:name'
-            , { templateUrl: '/includes/search.html', controller: CMSController })
+            when('/geeks/:sexe/:centreInteret'
+            , { templateUrl: '/includes/search.html',
+            controller: 'Geek'
+            })
             .otherwise({
                 redirectTo: '/'
             });
     }]);
 
-var searchController = angular.module('searchController',[]);
+app.controller('Geek', function($scope, $http, $routeParams) {
+    $http({
+        url: '/geeks/'+ $routeParams.sexe + '/'+$routeParams.centreInteret,
+        method: 'GET'
+    }).success(function(Geeks) {
+        $scope.Geeks = Geeks;
+    });
+})
 
-function CMSController($scope, $route, $routeParams) {
-    $route.current.templateUrl = '/pages/' + $routeParams.name + ".html";
-    alert($route.current.templateUrl);
-}
+
+
+
