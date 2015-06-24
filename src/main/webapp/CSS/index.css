@@ -6,13 +6,13 @@
 .article
 {
     height:40%;
-    margin:0;
+    margin:20px;
     margin-bottom: 20px;
-    width:100%;
     background-color:white;
     padding:0px;
     border-radius:10px;
     min-width: 200px;
+    border:solid 3px #0080c0;
 }
 .article-content
 {
@@ -24,5 +24,11 @@
 {
     padding:20px;
     color:rgb(255,255,255);
+    background-color:#0080c0;
     font-size:24px;
+}
+
+h1
+{
+    color:#0080c0;
 }

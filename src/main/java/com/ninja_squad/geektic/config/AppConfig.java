@@ -1,6 +1,7 @@
 package com.ninja_squad.geektic.config;
 
 import org.hibernate.jpa.HibernatePersistenceProvider;
+import org.omg.PortableInterceptor.Interceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -9,10 +10,13 @@ import org.springframework.context.annotation.Import;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.support.OpenEntityManagerInViewInterceptor;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.context.request.WebRequestInterceptor;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import javax.sql.DataSource;
@@ -58,5 +62,14 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         JpaTransactionManager txManager = new JpaTransactionManager();
         txManager.setEntityManagerFactory(emf().getObject());
         return txManager;
+    }
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry){
+        registry.addWebRequestInterceptor(openEntityManagerInViewInterceptor());
+    }
+
+    @Bean public OpenEntityManagerInViewInterceptor openEntityManagerInViewInterceptor() {
+        return new OpenEntityManagerInViewInterceptor();
     }
 }

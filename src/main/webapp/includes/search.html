@@ -1,9 +1,17 @@
-djbolqcblwjcbwjqcb
+<head>
+    <link href="/CSS/bootstrap.css" rel="stylesheet">
+    <link href="/CSS/index.css" rel="stylesheet">
+</head>
+
+<div ng-repeat="geek in Geeks" class="article col-xs-12 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-4 col-md-offset-2 col-lg-4 col-lg-offset-2">
+    <div class="article-header">
+        {{geek.nom}} {{geek.prenom}}
+    </div>
+    <div class="article-content">
+        Centre d'interet :
+
+        <a href="/#/geek/{{geek.prenom}}">En savoir plus</a>
+    </div>
 
 
-    <ul>
-        <li ng-repeat="geek in Geeks">
-            {{ geek.nom }}
-            {{ geek }}
-        </li>
-    </ul>
+</div>
