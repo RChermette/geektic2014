@@ -27,9 +27,17 @@
     background-color:#0080c0;
     font-size:24px;
 }
+.grad {
+    background: -webkit-linear-gradient(white, #0080c0) fixed; /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(white, #0080c0) fixed; /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(white, #0080c0) fixed; /* For Firefox 3.6 to 15 */
+    background: linear-gradient(white, white, #0080c0) fixed; /* Standard syntax */
+}
 
 h1
 {
+    font-size:64px;
+    text-align: center;
     color:#0080c0;
 }
 
